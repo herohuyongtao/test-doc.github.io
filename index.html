@@ -23,12 +23,11 @@
 
 <p></p>
 
-<h1>
-<a id="ximmerse-sdk-for-unity3d-v10" class="anchor" href="#ximmerse-sdk-for-unity3d-v10" aria-hidden="true"><span class="octicon octicon-link"></span></a>Ximmerse SDK for Unity3D (v1.0)</h1>
+<div align=right><img src="imgs/xim.png" alt=""></div>
 
-<p></p>
+<center><br><h1>Ximmerse SDK for Unity3D (v1.0)</h1><br></center>
 
-
+<!---|Document Number:     |`<Feature Identifier>`| --->
 
 <table>
 <thead>
@@ -60,435 +59,175 @@
 </tr>
 </tbody>
 </table>
-
-<hr>
-
-<p>© 2015 XIMMERSE
-All rights reserved</p>
-
+<hr class="underscore">
+<p>&copy; 2015 XIMMERSE<br>All rights reserved</p>
 <p><strong>UNCONTROLLED COPY</strong>: The master of this document is stored on an electronic database and is “write protected”; it may be altered only by authorized persons. While copies may be printed, it is not recommended. Viewing of the master electronically ensures access to the current issue. Any hardcopies taken must be regarded as uncontrolled copies.</p>
+<!---**XIMMERSE CONFIDENTIAL**: The information contained in this document is the property of Ximmerse. Except as expressly authorized in writing by Ximmerse, the holder shall keep all information contained herein confidential, shall disclose the information only to its employees with a need to know, and shall protect the information from disclosure and dissemination to third parties.  Except as expressly authorized in writing by Ximmerse, the holder is granted no rights to use the information contained herein.  If you have received this document in error, please notify the sender and destroy it immediately.--->
 
-
-
-<hr>
-
-<p><strong>Table of Content</strong></p>
-
+<hr class="page">
+<p class="toc" style="undefined"></p><h2 id="1-release-statement"><a name="1-release-statement" href="#1-release-statement"></a>1 Release Statement</h2>
+<h3 id="1.1-foreword"><a name="1.1-foreword" href="#1.1-foreword"></a>1.1 Foreword</h3>
+<p><!---As our hardware are still in the development iteration stage, this SDK should be only used for reference, i.e. it only works well with the product prototype. The purpose of this SDK is to help developers to explorer different interaction styles. Our formal SDK will be released after the shipment of Development Kit (DK v1.0). ---><br>This SDK is designed mainly for Unity3D Engine. In future, we will provide support for other developing environments.</p>
+<h3 id="1.2-test-environment"><a name="1.2-test-environment" href="#1.2-test-environment"></a>1.2 Test Environment</h3>
 <ul>
-  <li>
-<a href="#1-release-statement" title="1 Release Statement">1 Release Statement</a>
-    <ul>
-      <li><a href="#11-foreword" title="1.1 Foreword">1.1 Foreword</a></li>
-      <li><a href="#12-test-environment" title="1.2 Test Environment">1.2 Test Environment</a></li>
-      <li><a href="#13-notes" title="1.3 Notes">1.3 Notes</a></li>
-      <li><a href="#14-technical-support" title="1.4 Technical Support">1.4 Technical Support</a></li>
-    </ul>
-  </li>
-  <li>
-<a href="#2-sdk-setup" title="2 SDK Setup">2 SDK Setup</a>
-    <ul>
-      <li><a href="#21-import-resource-package" title="2.1 Import Resource Package">2.1 Import Resource Package</a></li>
-      <li><a href="#22-setup-ximmerse-sdk-under-unity-vr" title="2.2 Setup Ximmerse SDK under Unity VR">2.2 Setup Ximmerse SDK under Unity VR</a></li>
-      <li>
-<a href="#23-input-setup-for-ximmerse-hardwares" title="2.3 Input Setup for Ximmerse Hardwares">2.3 Input Setup for Ximmerse Hardwares</a>
-        <ul>
-          <li><a href="#231-stereo-camera-component" title="2.3.1 Stereo Camera Component">2.3.1 Stereo Camera Component</a></li>
-          <li><a href="#232-ximmerses-joystick-x-cobra" title="2.3.2 Ximmerse’s Joystick (X-COBRA)">2.3.2 Ximmerse’s Joystick (X-COBRA)</a></li>
-          <li><a href="#about-config-files" title="About Config Files">About Config Files</a></li>
-        </ul>
-      </li>
-      <li>
-<a href="#24-programming" title="2.4 Programming">2.4 Programming</a>
-        <ul>
-          <li><a href="#241-access-axes-and-buttons" title="2.4.1 Access Axes and Buttons">2.4.1 Access Axes and Buttons</a></li>
-          <li><a href="#242-access-position-and-rotation" title="2.4.2 Access Position and Rotation">2.4.2 Access Position and Rotation</a></li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>
-<a href="#3-ximmersecore-namespace" title="3 Ximmerse.Core Namespace">3 Ximmerse.Core Namespace</a>
-    <ul>
-      <li><a href="#31-overview" title="3.1 Overview">3.1 Overview</a></li>
-      <li><a href="#32-brief-introduction" title="3.2 Brief Introduction">3.2 Brief Introduction</a></li>
-    </ul>
-  </li>
-  <li>
-<a href="#4-ximmersecrossinput-namespace" title="4 Ximmerse.CrossInput Namespace">4 Ximmerse.CrossInput Namespace</a>
-    <ul>
-      <li><a href="#41-overview" title="4.1 Overview">4.1 Overview</a></li>
-      <li>
-<a href="#42-selected-classes-introduction" title="4.2 Selected Classes Introduction">4.2 Selected Classes Introduction</a>
-        <ul>
-          <li><a href="#421-crossinputmanager" title="4.2.1 CrossInputManager">4.2.1 CrossInputManager</a></li>
-          <li><a href="#422-unityinput" title="4.2.2 UnityInput">4.2.2 UnityInput</a></li>
-          <li><a href="#423-handjoystick" title="4.2.3 HandJoystick">4.2.3 HandJoystick</a></li>
-        </ul>
-      </li>
-      <li><a href="#43-extensions" title="4.3 Extensions">4.3 Extensions</a></li>
-    </ul>
-  </li>
-  <li><a href="#5-other-namespaces" title="5 Other Namespaces">5 Other Namespaces</a></li>
-  <li>
-<a href="#6-samples" title="6 Samples">6 Samples</a>
-    <ul>
-      <li><a href="#61-crossinputmanagergui" title="6.1 CrossInputManagerGUI">6.1 CrossInputManagerGUI</a></li>
-      <li><a href="#62-handcontroller" title="6.2 HandController">6.2 HandController</a></li>
-      <li><a href="#63-unitytoximmerse" title="6.3 UnityToXimmerse">6.3 UnityToXimmerse</a></li>
-      <li><a href="#64-hydratoximmerse" title="6.4 HydraToXimmerse">6.4 HydraToXimmerse</a></li>
-    </ul>
-  </li>
-  <li>
-<a href="#7-developing-with-gear-vr" title="7 Developing with Gear VR">7 Developing with Gear VR</a>
-    <ul>
-      <li><a href="#71-hardware-requirement" title="7.1 Hardware Requirement">7.1 Hardware Requirement</a></li>
-      <li><a href="#72-steps" title="7.2 Steps">7.2 Steps</a></li>
-    </ul>
-  </li>
-</ul>
-
-<h2>
-<a id="1-release-statement" class="anchor" href="#1-release-statement" aria-hidden="true"><span class="octicon octicon-link"></span></a>1 Release Statement</h2>
-
-<h3>
-<a id="11-foreword" class="anchor" href="#11-foreword" aria-hidden="true"><span class="octicon octicon-link"></span></a>1.1 Foreword</h3>
-
-
-
-<p>This SDK is designed mainly for Unity3D Engine. In future, we will provide support for other developing environments.</p>
-
-<h3>
-<a id="12-test-environment" class="anchor" href="#12-test-environment" aria-hidden="true"><span class="octicon octicon-link"></span></a>1.2 Test Environment</h3>
-
-<ul>
-<li>Operating System (OS): Windows 7 PC</li>
-<li>Unity3D Engine Version: Unity 5.1.3f1 (32-bit)</li>
-</ul>
-
-<h3>
-<a id="13-notes" class="anchor" href="#13-notes" aria-hidden="true"><span class="octicon octicon-link"></span></a>1.3 Notes</h3>
-
+<li>Operating System (OS): Windows 7 PC</li><li>Unity3D Engine Version: Unity 5.1.3f1 (32-bit)</li></ul>
+<h3 id="1.3-notes"><a name="1.3-notes" href="#1.3-notes"></a>1.3 Notes</h3>
 <ol>
-<li>This SDK does not support Linux or Mac OS X, please develop using Windows (PC).</li>
-<li>You can use other versions of Unity3D. However, versions 4.X are not verified or technically supported.</li>
-<li>It is recommended to use Versions 5.X due to its support for VR.</li>
-<li>In terms of compatibility or script update issues for different versions of Unity3D, it is recommended to use preprocessor macros.</li>
-</ol>
-
-<h3>
-<a id="14-technical-support" class="anchor" href="#14-technical-support" aria-hidden="true"><span class="octicon octicon-link"></span></a>1.4 Technical Support</h3>
-
-
-
+<li>This SDK does not support Linux or Mac OS X, please develop using Windows (PC).</li><li>You can use other versions of Unity3D. However, versions 4.X are not verified or technically supported.</li><li>It is recommended to use Versions 5.X due to its support for VR.</li><li>In terms of compatibility or script update issues for different versions of Unity3D, it is recommended to use preprocessor macros.</li></ol>
+<h3 id="1.4-technical-support"><a name="1.4-technical-support" href="#1.4-technical-support"></a>1.4 Technical Support</h3>
+<p><!--- - Contact Person: Mr. Huang ---></p>
 <ul>
-<li>Email: <a href="mailto:support@ximmerse.com">support@ximmerse.com</a>
-</li>
-</ul>
-
-<hr>
-
-<h2>
-<a id="2-sdk-setup" class="anchor" href="#2-sdk-setup" aria-hidden="true"><span class="octicon octicon-link"></span></a>2 SDK Setup</h2>
-
-<h3>
-<a id="21-import-resource-package" class="anchor" href="#21-import-resource-package" aria-hidden="true"><span class="octicon octicon-link"></span></a>2.1 Import Resource Package</h3>
-
+<li>Email: <a href="mailto:support@ximmerse.com">support@ximmerse.com</a></li></ul>
+<hr class="page">
+<h2 id="2-sdk-setup"><a name="2-sdk-setup" href="#2-sdk-setup"></a>2 SDK Setup</h2>
+<h3 id="2.1-import-resource-package"><a name="2.1-import-resource-package" href="#2.1-import-resource-package"></a>2.1 Import Resource Package</h3>
 <ol>
-<li>In an empty Unity project, click Unity menu <code>Assets</code> <code>--&gt;</code> <code>Import Package</code> <code>--&gt;</code> <code>Custom Package...</code>
-<div><img src="imgs/Assets.png"></div>
-</li>
-<li>In the file selection dialog, select <code>Ximmerse SDK 1.0.unitypackage</code>.
-<div><img src="imgs/FileDialog.png"></div>
-</li>
-<li>In <code>Importing package</code>, click <code>Import</code>.
-<div><img src="imgs/ImportingPackage.png"></div>
-</li>
-<li>Done! There will be two folders named <code>Plugins</code> and <code>Ximmerse SDK</code> under folder <code>$(ProjectDir)/Assets</code>.
-<div><img src="imgs/Project.png"></div>
-</li>
-</ol>
+<li>In an empty Unity project, click Unity menu <code>Assets</code><span class="mathjax">$\rightarrow$</span> <code>Import Package</code><span class="mathjax">$\rightarrow$</span> <code>Custom Package...</code><div align = center><img src="imgs/Assets.png" alt=""></div></li><li>In the file selection dialog, select <code>Ximmerse SDK 1.0.unitypackage</code>.<div align = center><img src="imgs/FileDialog.png" alt=""></div></li><li>In <code>Importing package</code>, click <code>Import</code>.<div align = center><img src="imgs/ImportingPackage.png" alt=""></div></li><li>Done! There will be two folders named <code>Plugins</code> and <code>Ximmerse SDK</code> under folder <code>$(ProjectDir)/Assets</code>.<div align = center><img src="imgs/Project.png" alt=""></div>
 
-<h3>
-<a id="22-setup-ximmerse-sdk-under-unity-vr" class="anchor" href="#22-setup-ximmerse-sdk-under-unity-vr" aria-hidden="true"><span class="octicon octicon-link"></span></a>2.2 Setup Ximmerse SDK under Unity VR</h3>
-
+</li></ol>
+<h3 id="2.2-setup-ximmerse-sdk-under-unity-vr"><a name="2.2-setup-ximmerse-sdk-under-unity-vr" href="#2.2-setup-ximmerse-sdk-under-unity-vr"></a>2.2 Setup Ximmerse SDK under Unity VR</h3>
 <blockquote>
 <p>Note: Please make sure that your Unity version supports VR mode, i.e. v5.1.0+.</p>
 </blockquote>
-
 <ol>
-<li>Click Unity menu <code>File</code> <code>--&gt;</code> <code>Build Settings...</code>
-<div><img src="imgs/File.png"></div>
-</li>
-<li>In <code>Build Settings</code>, click <code>Player Settings...</code>.
-<div><img src="imgs/BuildSettings.png"></div>
-</li>
-<li>In <code>Inspector</code> view <code>--&gt;</code> <code>Settings for PC, Mac &amp; Linux Standalone</code> tab <code>--&gt;</code> check the <code>Virtual Reality Supported</code> checkbox.
-<div><img src="imgs/Settings.png"></div>
-</li>
-<li>Click Unity menu <code>File</code> <code>--&gt;</code> <code>New Scene</code>, to create a scene.
-<div><img src="imgs/File2.png"></div>
-</li>
-<li>Select <code>Main Camera</code> game object in the <code>Hierachy</code> view <code>--&gt;</code> click Unity menu <code>GameObject</code> <code>--&gt;</code> <code>Create Empty Child</code>, to add a child object.
-<div><img src="imgs/GameObject.png"></div>
-</li>
-<li>Right click the added object in the <code>Hierachy</code> view <code>--&gt;</code> <code>Rename</code>, to rename it to be <code>Pivot</code>.
-<div><img src="imgs/MainCamera.png"></div>
-</li>
-<li>In <code>Project Browser</code> <code>--&gt;</code> <code>Assets</code> <code>--&gt;</code> <code>Ximmerse SDK</code> <code>--&gt;</code> <code>Prefabs</code> <code>--&gt;</code> <code>Input</code> <code>--&gt;</code> drag the prefabs named <code>_CrossInput</code> to the <code>Hierarchy</code> view to instantiate it.
-<div><img src="imgs/Project2.png"></div>
-</li>
-<li>In <code>Hierarchy</code> <code>--&gt;</code> <code>_CrossInput</code> <code>--&gt;</code> <code>_XimInput</code> <code>--&gt;</code> <code>XimBlobTracking</code>.
-<div><img src="imgs/Hierarchy.png"></div>
-</li>
-<li>In <code>Inspector</code>, change 'Pivot' key to be the transform of game object <code>Pivot</code>, which is the child game object of <code>Main Camera</code>.
-<div><img src="imgs/Xim2.png"></div>
-</li>
-</ol>
+<li>Click Unity menu <code>File</code><span class="mathjax">$\rightarrow$</span> <code>Build Settings...</code><div align = center><img src="imgs/File.png" alt=""></div></li><li>In <code>Build Settings</code>, click <code>Player Settings...</code>.<div align = center><img src="imgs/BuildSettings.png" alt=""></div></li><li>In <code>Inspector</code> view <span class="mathjax">$\rightarrow$</span> <code>Settings for PC, Mac &amp; Linux Standalone</code> tab <span class="mathjax">$\rightarrow$</span> check the <code>Virtual Reality Supported</code> checkbox.<div align = center><img src="imgs/Settings.png" alt=""></div></li><li>Click Unity menu <code>File</code><span class="mathjax">$\rightarrow$</span> <code>New Scene</code>, to create a scene.<div align = center><img src="imgs/File2.png" alt=""></div></li><li>Select <code>Main Camera</code> game object in the <code>Hierachy</code> view <span class="mathjax">$\rightarrow$</span> click Unity menu <code>GameObject</code><span class="mathjax">$\rightarrow$</span> <code>Create Empty Child</code>, to add a child object.<div align = center><img src="imgs/GameObject.png" alt=""></div></li><li>Right click the added object in the <code>Hierachy</code> view <span class="mathjax">$\rightarrow$</span> <code>Rename</code>, to rename it to be <code>Pivot</code>.<div align = center><img src="imgs/MainCamera.png" alt=""></div></li><li>In <code>Project Browser</code><span class="mathjax">$\rightarrow$</span> <code>Assets</code><span class="mathjax">$\rightarrow$</span> <code>Ximmerse SDK</code><span class="mathjax">$\rightarrow$</span> <code>Prefabs</code><span class="mathjax">$\rightarrow$</span> <code>Input</code><span class="mathjax">$\rightarrow$</span> drag the prefabs named <code>_CrossInput</code> to the <code>Hierarchy</code> view to instantiate it.<div align = center><img src="imgs/Project2.png" alt=""></div></li><li>In <code>Hierarchy</code><span class="mathjax">$\rightarrow$</span> <code>_CrossInput</code><span class="mathjax">$\rightarrow$</span> <code>_XimInput</code><span class="mathjax">$\rightarrow$</span> <code>XimBlobTracking</code>.<div align = center><img src="imgs/Hierarchy.png" alt=""></div></li><li>In <code>Inspector</code>, change ‘Pivot’ key to be the transform of game object <code>Pivot</code>, which is the child game object of <code>Main Camera</code>.<div align = center><img src="imgs/Xim2.png" alt=""></div>
 
-<h3>
-<a id="23-input-setup-for-ximmerse-hardwares" class="anchor" href="#23-input-setup-for-ximmerse-hardwares" aria-hidden="true"><span class="octicon octicon-link"></span></a>2.3 Input Setup for Ximmerse Hardwares</h3>
-
-<h4>
-<a id="231-stereo-camera-component" class="anchor" href="#231-stereo-camera-component" aria-hidden="true"><span class="octicon octicon-link"></span></a>2.3.1 Stereo Camera Component</h4>
-
+</li></ol>
+<h3 id="2.3-input-setup-for-ximmerse-hardwares"><a name="2.3-input-setup-for-ximmerse-hardwares" href="#2.3-input-setup-for-ximmerse-hardwares"></a>2.3 Input Setup for Ximmerse Hardwares</h3>
+<h4 id="2.3.1-stereo-camera-component"><a name="2.3.1-stereo-camera-component" href="#2.3.1-stereo-camera-component"></a>2.3.1 Stereo Camera Component</h4>
 <p>Item <code>Pose Name</code> under <code>Points</code> refers to the key of the corresponding <code>VirtualPose</code>.</p>
+<div align = center><img src="imgs/Xim3.png" alt=""></div>
 
-<div><img src="imgs/Xim3.png"></div>
-
-<h4>
-<a id="232-ximmerses-joystick-x-cobra" class="anchor" href="#232-ximmerses-joystick-x-cobra" aria-hidden="true"><span class="octicon octicon-link"></span></a>2.3.2 Ximmerse's Joystick (X-COBRA)</h4>
-
+<h4 id="2.3.2-ximmerse's-joystick-(x-cobra)"><a name="2.3.2-ximmerse's-joystick-(x-cobra)" href="#2.3.2-ximmerse's-joystick-(x-cobra)"></a>2.3.2 Ximmerse’s Joystick (X-COBRA)</h4>
 <p>In file <code>$(ProjectDir)/Assets/Ximmerse SDK/Prefabs/Input/X-Cobra Alpha 0/Sensors</code>, there are 4 subclasses of <code>SensorBase</code>, which refers to IMU, button, trigger and axis respectively.</p>
-
-<div><img src="imgs/Create.png"></div>
+<div align = center><img src="imgs/Create.png" alt=""></div>
 
 <ol>
-<li>
-<strong>IMU</strong>: Item <code>Pose Name</code> refers to the key of the corresponding <code>VirtualPose</code>.
-<div><img src="imgs/Inspector2.png"></div>
-</li>
-<li>
-<strong>Button</strong>: Enter edit mode by checking the <code>Edit Mode</code> checkbox in <code>Inspector</code> view. The left columns are display names (for easy editing) and right columns refer to the keys of the corresponding <code>VirtualButton</code>.
-<div><img src="imgs/Inspector3.png"></div>
-</li>
-<li>
-<strong>Trigger</strong>: <code>Axis Name</code> refers to the key of the corresponding <code>VirtualAxis</code> and <code>Button Name</code> refers to the key of the corresponding <code>VirtualButton</code>.
-<div><img src="imgs/Inspector4.png"></div>
-</li>
-<li>
-<strong>Axis</strong>: Enter edit mode by checking the <code>Edit Mode</code> checkbox in <code>Inspector</code> view. The left columns are display names (for easy editing) and right columns refer to the keys of the corresponding <code>VirtualAxis</code>.
-<div><img src="imgs/Inspector5.png"></div>
-</li>
-</ol>
+<li><strong>IMU</strong>: Item <code>Pose Name</code> refers to the key of the corresponding <code>VirtualPose</code>. <div align = center><img src="imgs/Inspector2.png" alt=""></div></li><li><strong>Button</strong>: Enter edit mode by checking the <code>Edit Mode</code> checkbox in <code>Inspector</code> view. The left columns are display names (for easy editing) and right columns refer to the keys of the corresponding <code>VirtualButton</code>. <div align = center><img src="imgs/Inspector3.png" alt=""></div></li><li><strong>Trigger</strong>: <code>Axis Name</code> refers to the key of the corresponding <code>VirtualAxis</code> and <code>Button Name</code> refers to the key of the corresponding <code>VirtualButton</code>. <div align = center><img src="imgs/Inspector4.png" alt=""></div></li><li><strong>Axis</strong>: Enter edit mode by checking the <code>Edit Mode</code> checkbox in <code>Inspector</code> view. The left columns are display names (for easy editing) and right columns refer to the keys of the corresponding <code>VirtualAxis</code>. <div align = center><img src="imgs/Inspector5.png" alt=""></div>
 
-<h4>
-<a id="about-config-files" class="anchor" href="#about-config-files" aria-hidden="true"><span class="octicon octicon-link"></span></a>About Config Files</h4>
-
+</li></ol>
+<h4 id="about-config-files"><a name="about-config-files" href="#about-config-files"></a>About Config Files</h4>
 <p>There is one config file <code>CrossInput.txt</code> under folder <code>$(ProjectDir)/Assets/Ximmerse SDK/Resources/Configs</code>, through which you can setup detailed parameters of Ximmerse hardwares after the release of Unity build applications.</p>
-
-<div><img src="imgs/Project3.png"></div>
+<div align = center><img src="imgs/Project3.png" alt=""></div>
 
 <p>In this SDK, there are two <code>MonoBehaviour</code> scripts, i.e. <code>XimBlobTracking_Usb.cs</code> and <code>DeviceBase.cs</code>, which use the config file. In both scripts, there are two shared keywords, i.e. <code>configPath</code> and <code>configSec</code>. <code>configPath</code> refers to the path of the config file and <code>configSec</code> refers to the referred section in the config file. Please refer <a href="https://en.wikipedia.org/wiki/INI_file">here</a> to know more about the file formats of config files.</p>
-
 <p>In the following two screenshots of the <code>Inspector</code> view, the red boxes highlight the setups of the config files and blue boxes highlight the fields that can be edited in the config file.</p>
-
-<div>
-<img src="imgs/Xim4.png"> <img src="imgs/DeviceBase2.png">
-</div>
+<div align = center><br><img src="imgs/Xim4.png" alt=""> <img src="imgs/DeviceBase2.png" alt=""><br></div>
 
 <p>You can see the corresponding sections and fields in file <code>CrossInput.txt</code>.</p>
+<div align = center><img src="imgs/CrossInput3.png" alt=""></div>
 
-<div><img src="imgs/CrossInput3.png"></div>
-
-<p>If you don't want to use config files, just set <code>configPath</code> to be empty and write the parameters of config files to the corresponding fields of <code>MonoBehaviour</code> script.</p>
-
-<h3>
-<a id="24-programming" class="anchor" href="#24-programming" aria-hidden="true"><span class="octicon octicon-link"></span></a>2.4 Programming</h3>
-
-<h4>
-<a id="241-access-axes-and-buttons" class="anchor" href="#241-access-axes-and-buttons" aria-hidden="true"><span class="octicon octicon-link"></span></a>2.4.1 Access Axes and Buttons</h4>
-
+<p>If you don’t want to use config files, just set <code>configPath</code> to be empty and write the parameters of config files to the corresponding fields of <code>MonoBehaviour</code> script.</p>
+<h3 id="2.4-programming"><a name="2.4-programming" href="#2.4-programming"></a>2.4 Programming</h3>
+<h4 id="2.4.1-access-axes-and-buttons"><a name="2.4.1-access-axes-and-buttons" href="#2.4.1-access-axes-and-buttons"></a>2.4.1 Access Axes and Buttons</h4>
 <ol>
-<li>
-<p>Import <code>Ximmerse.CrossInput</code> namespace.</p>
+<li>Import <code>Ximmerse.CrossInput</code> namespace.<pre><code class="cpp">using Ximmerse.CrossInput;
+</code></pre>
+</li><li>Access the <code>Horizontal</code> axis of left joystick and the <code>Vertical</code> axis of right joystick.<pre><code class="cpp">float left_h  =CrossInputManager.GetAxis(&quot;Left_Horizontal&quot;);
+float right_v =CrossInputManager.GetAxis(&quot;Right_Vertical&quot;);
+</code></pre>
+These information can also be obtained by <code>HandJoystick</code> as follows, which are equivalent to the above functions.<pre><code class="cpp">float left_h  =HandJoystick.joysticks[0].GetAxis(&quot;Horizontal&quot;);
+float right_v =HandJoystick.joysticks[1].GetAxis(&quot;Vertical&quot;);
+</code></pre>
+</li><li><p>Access the <code>Fire1</code> button of left joystick and the <code>Jump</code> button of right joystick.</p>
+<pre><code class="cpp"> if(CrossInputManager.GetButtonDown(&quot;Left_Fire1&quot;)) {
+     // Let&#39;s fire...
+ }
 
-<div class="highlight highlight-source-c++"><pre><span class="pl-k">using</span> Ximmerse.CrossInput;</pre></div>
-</li>
-<li>
-<p>Access the <code>Horizontal</code> axis of left joystick and the <code>Vertical</code> axis of right joystick.</p>
-
-<div class="highlight highlight-source-c++"><pre><span class="pl-k">float</span> left_h  =CrossInputManager.GetAxis(<span class="pl-s"><span class="pl-pds">"</span>Left_Horizontal<span class="pl-pds">"</span></span>);
-<span class="pl-k">float</span> right_v =CrossInputManager.GetAxis(<span class="pl-s"><span class="pl-pds">"</span>Right_Vertical<span class="pl-pds">"</span></span>);</pre></div>
-
-<p>These information can also be obtained by <code>HandJoystick</code> as follows, which are equivalent to the above functions.</p>
-
-<div class="highlight highlight-source-c++"><pre><span class="pl-k">float</span> left_h  =HandJoystick.joysticks[<span class="pl-c1">0</span>].GetAxis(<span class="pl-s"><span class="pl-pds">"</span>Horizontal<span class="pl-pds">"</span></span>);
-<span class="pl-k">float</span> right_v =HandJoystick.joysticks[<span class="pl-c1">1</span>].GetAxis(<span class="pl-s"><span class="pl-pds">"</span>Vertical<span class="pl-pds">"</span></span>);</pre></div>
-</li>
-<li>
-<p>Access the <code>Fire1</code> button of left joystick and the <code>Jump</code> button of right joystick.</p>
-
-<div class="highlight highlight-source-c++"><pre><span class="pl-k">if</span>(CrossInputManager.GetButtonDown(<span class="pl-s"><span class="pl-pds">"</span>Left_Fire1<span class="pl-pds">"</span></span>)) {
-    <span class="pl-c">// Let's fire...</span>
-}
-
-<span class="pl-k">if</span>(CrossInputManager.GetButtonDown(<span class="pl-s"><span class="pl-pds">"</span>Right_Jump<span class="pl-pds">"</span></span>)){
-    <span class="pl-c">// Let's jump...</span>
-}</pre></div>
-
+ if(CrossInputManager.GetButtonDown(&quot;Right_Jump&quot;)){
+     // Let&#39;s jump...
+ }
+</code></pre>
 <p>Similarly, these information can also be obtained by <code>HandJoystick</code> as follows, which are equivalent to the above functions.</p>
+<pre><code class="cpp"> if(HandJoystick.joysticks[0].GetButtonDown(&quot;Fire1&quot;)){
+     // Let&#39;s fire...
+ }
 
-<div class="highlight highlight-source-c++"><pre><span class="pl-k">if</span>(HandJoystick.joysticks[<span class="pl-c1">0</span>].GetButtonDown(<span class="pl-s"><span class="pl-pds">"</span>Fire1<span class="pl-pds">"</span></span>)){
-    <span class="pl-c">// Let's fire...</span>
-}
-
-<span class="pl-k">if</span>(HandJoystick.joysticks[<span class="pl-c1">1</span>].GetButtonDown(<span class="pl-s"><span class="pl-pds">"</span>Jump<span class="pl-pds">"</span></span>)){
-    <span class="pl-c">// Let's jump...</span>
-}</pre></div>
-</li>
-</ol>
-
-<h4>
-<a id="242-access-position-and-rotation" class="anchor" href="#242-access-position-and-rotation" aria-hidden="true"><span class="octicon octicon-link"></span></a>2.4.2 Access Position and Rotation</h4>
-
+ if(HandJoystick.joysticks[1].GetButtonDown(&quot;Jump&quot;)){
+     // Let&#39;s jump...
+ }
+</code></pre>
+</li></ol>
+<h4 id="2.4.2-access-position-and-rotation"><a name="2.4.2-access-position-and-rotation" href="#2.4.2-access-position-and-rotation"></a>2.4.2 Access Position and Rotation</h4>
 <p>Taking the sample script <code>HandController.cs</code> under folder <code>$(ProjectDir)/Assets/Ximmerse SDK/Scenes/Example Scripts</code> as an example:</p>
-
-<div><img src="imgs/Assets2.png"></div>
+<div align = center><img src="imgs/Assets2.png" alt=""></div>
 
 <ol>
-<li>
-<p>Import <code>Ximmerse.CrossInput</code> namespace.</p>
-
-<div class="highlight highlight-source-c++"><pre><span class="pl-k">using</span> Ximmerse.CrossInput;</pre></div>
-</li>
-<li>
-<p>Obtain the reference of <code>VirtualPose</code> by <code>CrossInputManager.VirtualPoseReference(poseName)</code>.</p>
-
-<div class="highlight highlight-source-c++"><pre>m_Pose=CrossInputManager.VirtualPoseReference(poseName);</pre></div>
-
+<li>Import <code>Ximmerse.CrossInput</code> namespace.<pre><code class="cpp">using Ximmerse.CrossInput;
+</code></pre>
+</li><li><p>Obtain the reference of <code>VirtualPose</code> by <code>CrossInputManager.VirtualPoseReference(poseName)</code>.</p>
+<pre><code class="cpp">m_Pose=CrossInputManager.VirtualPoseReference(poseName);
+</code></pre>
 <p>The properties and fields of <code>VirtualPose</code> are as follows:</p>
+<pre><code class="cpp"> public class VirtualPose:SmartPointer{
+     public string name{
+         get;
+         private set;
+     }
+     public bool matchWithInputManager {
+         get;
+         private set;
+     }
 
-<div class="highlight highlight-source-c++"><pre>public <span class="pl-k">class</span> <span class="pl-en">VirtualPose</span>:SmartPointer{
-    public string name{
-        get;
-        private set;
-    }
-    public <span class="pl-k">bool</span> matchWithInputManager {
-        get;
-        private set;
-    }
+     public bool active=true;
+     public int id;
 
-    public <span class="pl-k">bool</span> active=<span class="pl-c1">true</span>;
-    public <span class="pl-k">int</span> id;
+     public Vector3 position;
+     public Quaternion rotation;
 
-    public Vector3 position;
-    public Quaternion rotation;
-
-    ...
-}<span class="pl-ii"></span></pre></div>
-</li>
-<li>
-<p>Set <code>position</code> and <code>rotation</code> of <code>Transform</code> to be <code>position</code> and <code>rotation</code> of <code>VirtualPose</code> in functions like <code>MonoBehaviour.FixedUpdate()</code>.</p>
-
-<div class="highlight highlight-source-c++"><pre><span class="pl-c">/// &lt;summary&gt;</span>
-<span class="pl-c">///</span>
-<span class="pl-c">/// &lt;/summary&gt;</span>
-protected <span class="pl-k">virtual</span> <span class="pl-k">void</span> <span class="pl-en">FixedUpdate</span>(){
-    <span class="pl-c">//</span>
-    m_HandTrans.<span class="pl-smi">position</span>=m_Pose.<span class="pl-smi">position</span>;
-    m_HandTrans.<span class="pl-smi">rotation</span>=m_Pose.<span class="pl-smi">rotation</span>;
-}</pre></div>
-</li>
-</ol>
-
-<hr>
-
-<h2>
-<a id="3-ximmersecore-namespace" class="anchor" href="#3-ximmersecore-namespace" aria-hidden="true"><span class="octicon octicon-link"></span></a>3 <code>Ximmerse.Core</code> Namespace</h2>
-
-<h3>
-<a id="31-overview" class="anchor" href="#31-overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>3.1 Overview</h3>
-
-<p>This namespace is used for accessing the APIs of Ximmerse's hardwares. As our beta versions are still in a fast iteration stage, there will be different versions for the supported hardware. Please pay attention to what your DK version is. Though there will be big changes for this namespace, it should be OK to use Ximmerse hardwares with general software as long as the name and address of the equipment are set properly. Note that in most cases, you will not need to access this namespace. In terms of input interfaces, you only need to access <code>Ximmerse.CrossInput</code>. You can also apply Razer's Hydra in developing as <code>Ximmerse.CrossInput</code> is a compatible input solution.</p>
-
-<h3>
-<a id="32-brief-introduction" class="anchor" href="#32-brief-introduction" aria-hidden="true"><span class="octicon octicon-link"></span></a>3.2 Brief Introduction</h3>
-
-<p>In Unity, Ximmerse's joystick (X-COBRA) is abstracted as <code>DeviceBase</code>. Information related to the Ximmerse's joystick (e.g. axes, buttons, triggers and IMU) is abstracted as <code>SensorBase</code>.</p>
-
-<p>Prefabs should set up automatically in the SDK. Developers only need to set the corresponding config file under folder <code>project_folder/Ximmerse SDK/Resources/Configs/</code> in order to setup Ximmerse's X-COBRA after the formal release.</p>
-
+     ...
+ }
+</code></pre>
+</li><li>Set <code>position</code> and <code>rotation</code> of <code>Transform</code> to be <code>position</code> and <code>rotation</code> of <code>VirtualPose</code> in functions like <code>MonoBehaviour.FixedUpdate()</code>.<pre><code class="cpp"> /// &lt;summary&gt;
+ ///
+ /// &lt;/summary&gt;
+ protected virtual void FixedUpdate(){
+     //
+     m_HandTrans.position=m_Pose.position;
+     m_HandTrans.rotation=m_Pose.rotation;
+ }
+</code></pre>
+</li></ol>
+<hr class="page">
+<h2 id="3-`ximmerse.core`-namespace"><a name="3-`ximmerse.core`-namespace" href="#3-`ximmerse.core`-namespace"></a>3 <code>Ximmerse.Core</code> Namespace</h2>
+<h3 id="3.1-overview"><a name="3.1-overview" href="#3.1-overview"></a>3.1 Overview</h3>
+<p>This namespace is used for accessing the APIs of Ximmerse’s hardwares. As our beta versions are still in a fast iteration stage, there will be different versions for the supported hardware. Please pay attention to what your DK version is. Though there will be big changes for this namespace, it should be OK to use Ximmerse hardwares with general software as long as the name and address of the equipment are set properly. Note that in most cases, you will not need to access this namespace. In terms of input interfaces, you only need to access <code>Ximmerse.CrossInput</code>. You can also apply Razer’s Hydra in developing as <code>Ximmerse.CrossInput</code> is a compatible input solution.</p>
+<h3 id="3.2-brief-introduction"><a name="3.2-brief-introduction" href="#3.2-brief-introduction"></a>3.2 Brief Introduction</h3>
+<p>In Unity, Ximmerse’s joystick (X-COBRA) is abstracted as <code>DeviceBase</code>. Information related to the Ximmerse’s joystick (e.g. axes, buttons, triggers and IMU) is abstracted as <code>SensorBase</code>.</p>
+<p>Prefabs should set up automatically in the SDK. Developers only need to set the corresponding config file under folder <code>project_folder/Ximmerse SDK/Resources/Configs/</code> in order to setup Ximmerse’s X-COBRA after the formal release.</p>
 <p><code>DeviceName</code> is the device number. Please refer to the <code>txt</code> file under the crossponding samples.</p>
-
 <p><code>DeviceAddress</code> is the serial port address under Windows, which is the Bluetooth address under Android.</p>
-
-<p><code>FmtJoy</code> refers to the character string of the input formatted key. For example, key <code>"Fire1"</code> will be formatted to <code>"Left_ Fire1"</code> in <code>CrossInputManager</code> (under <code>Ximmerse.CrossInput</code> namespace) when joystick's <code>FmtJoy</code> is <code>"Left_{0}"</code>.</p>
-
-<div><img src="imgs/DeviceBase.png"></div>
+<p><code>FmtJoy</code> refers to the character string of the input formatted key. For example, key <code>&quot;Fire1&quot;</code> will be formatted to <code>&quot;Left_ Fire1&quot;</code> in <code>CrossInputManager</code> (under <code>Ximmerse.CrossInput</code> namespace) when joystick’s <code>FmtJoy</code> is <code>&quot;Left_{0}&quot;</code>.</p>
+<div align = center><img src="imgs/DeviceBase.png" alt=""></div>
 
 <p>USB is used for communication of the stereo camera module, which is recommended to setup in the <code>txt</code> file under folder <code>project_folder/Assets/StreamingAssets/Configs/</code>.</p>
-
 <p>In general cases, the listener IP should be set to <code>192.168.1.1</code>, the port number to <code>8873</code> and assign Pivot properly, which stands for one <code>Transform</code> of the stereo camera module in Unity (as the next child transform under the head-mounted display coordinate system in VR SDK). <code>Sensitivity</code> is the coordinate scaling value. <code>PoseName</code> in the <code>Points</code> list is the projected pose name.</p>
-
-<div><img src="imgs/BlobTracking.png"></div>
+<div align = center><img src="imgs/BlobTracking.png" alt=""></div>
 
 <p>Remarks:</p>
-
 <ul>
-<li>Config files are located under folders below:
-
-<ul>
-<li>Unity editor: <code>project_folder/Ximmerse SDK/Resources/Configs/</code>
-</li>
-<li>Windows release version: <code>release_folder/release_folder_Data/StreamingAssets/Configs/</code>
-</li>
-<li>Android release version: <code>Android_SD_card_root_folder/Ximmerse Runtime/Configs/</code>
-</li>
-</ul>
-</li>
-</ul>
-
-<hr>
-
-<h2>
-<a id="4-ximmersecrossinput-namespace" class="anchor" href="#4-ximmersecrossinput-namespace" aria-hidden="true"><span class="octicon octicon-link"></span></a>4 <code>Ximmerse.CrossInput</code> Namespace</h2>
-
-<h3>
-<a id="41-overview" class="anchor" href="#41-overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>4.1 Overview</h3>
-
+<li>Config files are located under folders below:<ul>
+<li>Unity editor: <code>project_folder/Ximmerse SDK/Resources/Configs/</code></li><li>Windows release version: <code>release_folder/release_folder_Data/StreamingAssets/Configs/</code></li><li>Android release version: <code>Android_SD_card_root_folder/Ximmerse Runtime/Configs/</code></li></ul>
+</li></ul>
+<hr class="page">
+<h2 id="4-`ximmerse.crossinput`-namespace"><a name="4-`ximmerse.crossinput`-namespace" href="#4-`ximmerse.crossinput`-namespace"></a>4 <code>Ximmerse.CrossInput</code> Namespace</h2>
+<h3 id="4.1-overview"><a name="4.1-overview" href="#4.1-overview"></a>4.1 Overview</h3>
 <p><strong>Compatible solution for multiple input.</strong> <code>CrossInputManager</code> is the access entry point, which is modified from the official sample <code>UnityStandardAssets.CrossPlatformInput</code>. In order to run <code>Ximmerse.CrossInput</code> successfully, <code>GameObject</code> with <code>CrossInputManager</code> component (whose properties source list should also be set up properly) should be added to the game scene.</p>
-
 <blockquote>
-<p>Tip: You can turn off <code>CrossInputManager</code>'s <code>useCrossInput</code> before running so that <code>CrossInputManager</code> will use the embedded input APIs of Unity.</p>
+<p>Tip: You can turn off <code>CrossInputManager</code>‘s <code>useCrossInput</code> before running so that <code>CrossInputManager</code> will use the embedded input APIs of Unity.</p>
 </blockquote>
-
-<p>On the other hand, you can customize other input solutions, such as Razer's Hydra, Xbox 360 controller or Ximmerse's joystick (X-COBRA). Instead of writing different access interfaces for different input solutions, you only need to access the static functions of <code>CrossInputManager</code>.</p>
-
+<p>On the other hand, you can customize other input solutions, such as Razer’s Hydra, Xbox 360 controller or Ximmerse’s joystick (X-COBRA). Instead of writing different access interfaces for different input solutions, you only need to access the static functions of <code>CrossInputManager</code>.</p>
 <p>For example, assuming you want to acquire the status of the joystick and button (pressed or not), you will need to call <code>Input.GetAxis(axisName)</code> and <code>Input.GetButton(buttonName)</code> in native Unity programming. With <code>Ximmerse.CrossInput</code> input system, they can be easily replaced by <code>CrossInputManager.GetAxis(axisName)</code> and <code>CrossInputManager.GetButton(buttonName)</code>.</p>
-
 <p>Current input solutions can be divided into two categories: traditional controllers (keyboard &amp; mouse and joystick) and motion controllers (with position and orientation in space). With <code>Ximmerse.CrossInput</code>, motion sensing input is abstracted as <code>VirtualPose</code> class (with position and orientation in space). You can obtain the reference of the <code>VirtualPose</code> by simply calling <code>CrossInputManager.VirtualPoseReference(name)</code>.</p>
-
 <blockquote>
 <p>Tip: In the <code>UnityStandardAssets.CrossPlatformInput</code> sample, joystick and button are abstracted as <code>VirtualAxis</code> and <code>VirtualButton</code>. Please refer to the <a href="#extension">Extensions</a> section on how to extend <code>Ximmerse.CrossInput</code>.</p>
 </blockquote>
+<p>In this SDK, the full preset hierarchy is as follows. To disable one particular input component, simply set <code>GameObject</code>‘s <code>active</code> to <code>false</code> on the respective script.</p>
+<div align = center><br><img src="imgs/CrossInputManager.png" alt=""> <img src="imgs/CrossInput.png" alt=""><br></div>
 
-<p>In this SDK, the full preset hierarchy is as follows. To disable one particular input component, simply set <code>GameObject</code>'s <code>active</code> to <code>false</code> on the respective script.</p>
-
-<div>
-<img src="imgs/CrossInputManager.png"> <img src="imgs/CrossInput.png">
-</div>
-
-<h3>
-<a id="42-selected-classes-introduction" class="anchor" href="#42-selected-classes-introduction" aria-hidden="true"><span class="octicon octicon-link"></span></a>4.2 Selected Classes Introduction</h3>
-
-<h4>
-<a id="421-crossinputmanager" class="anchor" href="#421-crossinputmanager" aria-hidden="true"><span class="octicon octicon-link"></span></a>4.2.1 <code>CrossInputManager</code>
-</h4>
-
-<p><strong>Input manager, similar to <code>UnityStandardAssets.CrossPlatformInput</code>.</strong></p>
-
-<p>The related input APIs of <code>CrossPlatformInputManager</code> are as follows:</p>
-
+<h3 id="4.2-selected-classes-introduction"><a name="4.2-selected-classes-introduction" href="#4.2-selected-classes-introduction"></a>4.2 Selected Classes Introduction</h3>
+<h4 id="4.2.1-`crossinputmanager`"><a name="4.2.1-`crossinputmanager`" href="#4.2.1-`crossinputmanager`"></a>4.2.1 <code>CrossInputManager</code></h4>
+<p><strong>Input manager, similar to <code>UnityStandardAssets.CrossPlatformInput</code>.</strong><br>The related input APIs of <code>CrossPlatformInputManager</code> are as follows:</p>
 <table>
 <thead>
 <tr>
@@ -670,65 +409,44 @@ protected <span class="pl-k">virtual</span> <span class="pl-k">void</span> <span
 </tr>
 </tbody>
 </table>
-
 <p>Remarks:</p>
-
 <ol>
-<li><p>A mouse's axis information can be obtained by <code>CrossInputManager.mousePosition</code>. Due to poor user experience, it is not recommended to use traditional mouse as VR input.</p></li>
-<li><p>Alike <code>UnityEngine.Input</code>, <code>CrossInputManager</code>'s interface can only be accessed in <code>MonoBehaviour.Update()</code>.</p></li>
-<li>
-<p>The priority of <code>CrossInputManager</code> script should be set higher than the normal ones in order to make sure input can be written to <code>CrossInputManager</code>'s cache while being called. This can be set in <code>Edit</code>$\rightarrow$<code>Project Settings</code>$\rightarrow$<code>Script Execution Order</code>:</p>
+<li>A mouse’s axis information can be obtained by <code>CrossInputManager.mousePosition</code>. Due to poor user experience, it is not recommended to use traditional mouse as VR input.</li><li>Alike <code>UnityEngine.Input</code>, <code>CrossInputManager</code>‘s interface can only be accessed in <code>MonoBehaviour.Update()</code>.</li><li>The priority of <code>CrossInputManager</code> script should be set higher than the normal ones in order to make sure input can be written to <code>CrossInputManager</code>‘s cache while being called. This can be set in <code>Edit</code><span class="mathjax">$\rightarrow$</span><code>Project Settings</code><span class="mathjax">$\rightarrow$</span><code>Script Execution Order</code>:<div align = center><img src="imgs/Inspector.png" alt=""></div>
 
-<div><img src="imgs/Inspector.png"></div>
-</li>
-</ol>
+</li></ol>
+<h4 id="4.2.2-`unityinput`"><a name="4.2.2-`unityinput`" href="#4.2.2-`unityinput`"></a>4.2.2 <code>UnityInput</code></h4>
+<p>You can write the embedded input of Unity to <code>CrossInputManager</code>‘s input cache. The embedded input of Unity can be further obtained through <code>CrossInputManager</code>.</p>
+<div align = center><img src="imgs/UnityInput.png" alt=""></div>
 
-<h4>
-<a id="422-unityinput" class="anchor" href="#422-unityinput" aria-hidden="true"><span class="octicon octicon-link"></span></a>4.2.2 <code>UnityInput</code>
-</h4>
+<h4 id="4.2.3-`handjoystick`"><a name="4.2.3-`handjoystick`" href="#4.2.3-`handjoystick`"></a>4.2.3 <code>HandJoystick</code></h4>
+<p><strong>Input interface to distinguish left and right hands.</strong> It’s not easy to distinguish left and right hands as strings are used as keys in <code>CrossInputManager</code>. With the handy accessor <code>HandJoystick</code>, developers can use formatted strings and the string arrays of input keys to instantiate an instance. Input can be accessed by <code>HandJoystick.GetAxis(axisName)</code> and <code>HandJoystick.GetButton(buttonName)</code>. Please refer to the following example:</p>
+<pre><code class="cpp">string[] joystickFmts=new string[2]{&quot;j0_{0}&quot;,&quot;j1_{0}&quot;}; // joystick list
+string[] axes=new string[2]{&quot;Horizontal&quot;,&quot;Vertical&quot;}; // axes list
+string[] buttons=new string[4]{&quot;Fire1&quot;,&quot;Fire2&quot;,&quot;Fire3&quot;,&quot;Jump&quot;}; // button list
+HandJoystick[] joysticks=new HandJoystick[2]{new HandJoystick(),new HandJoystick()}; // HandJoystick list
 
-<p>You can write the embedded input of Unity to <code>CrossInputManager</code>'s input cache. The embedded input of Unity can be further obtained through <code>CrossInputManager</code>.</p>
+// initialize HandJoystick
+joysticks[0].InitInput(joystickFmts[0],axes,joystickFmts[0],buttons, &quot;&quot;);
+joysticks[1].InitInput(joystickFmts[1],axes,joystickFmts[1],buttons, &quot;&quot;);
 
-<div><img src="imgs/UnityInput.png"></div>
-
-<h4>
-<a id="423-handjoystick" class="anchor" href="#423-handjoystick" aria-hidden="true"><span class="octicon octicon-link"></span></a>4.2.3 <code>HandJoystick</code>
-</h4>
-
-<p><strong>Input interface to distinguish left and right hands.</strong> It's not easy to distinguish left and right hands as strings are used as keys in <code>CrossInputManager</code>. With the handy accessor <code>HandJoystick</code>, developers can use formatted strings and the string arrays of input keys to instantiate an instance. Input can be accessed by <code>HandJoystick.GetAxis(axisName)</code> and <code>HandJoystick.GetButton(buttonName)</code>. Please refer to the following example:</p>
-
-<div class="highlight highlight-source-c++"><pre>string[] joystickFmts=<span class="pl-k">new</span> string[<span class="pl-c1">2</span>]{<span class="pl-s"><span class="pl-pds">"</span>j0_{0}<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>j1_{0}<span class="pl-pds">"</span></span>}; <span class="pl-c">// joystick list</span>
-string[] axes=<span class="pl-k">new</span> string[<span class="pl-c1">2</span>]{<span class="pl-s"><span class="pl-pds">"</span>Horizontal<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>Vertical<span class="pl-pds">"</span></span>}; <span class="pl-c">// axes list</span>
-string[] buttons=<span class="pl-k">new</span> string[<span class="pl-c1">4</span>]{<span class="pl-s"><span class="pl-pds">"</span>Fire1<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>Fire2<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>Fire3<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>Jump<span class="pl-pds">"</span></span>}; <span class="pl-c">// button list</span>
-HandJoystick[] joysticks=<span class="pl-k">new</span> HandJoystick[<span class="pl-c1">2</span>]{<span class="pl-k">new</span> <span class="pl-c1">HandJoystick</span>(),<span class="pl-k">new</span> <span class="pl-c1">HandJoystick</span>()}; <span class="pl-c">// HandJoystick list</span>
-
-<span class="pl-c">// initialize HandJoystick</span>
-joysticks[<span class="pl-c1">0</span>].InitInput(joystickFmts[<span class="pl-c1">0</span>],axes,joystickFmts[<span class="pl-c1">0</span>],buttons, <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>);
-joysticks[<span class="pl-c1">1</span>].InitInput(joystickFmts[<span class="pl-c1">1</span>],axes,joystickFmts[<span class="pl-c1">1</span>],buttons, <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>);
-
-<span class="pl-c">// access input through HandJoystick</span>
-joysticks[<span class="pl-c1">0</span>].GetAxis(<span class="pl-s"><span class="pl-pds">"</span>Horizontal<span class="pl-pds">"</span></span>); <span class="pl-c">// use short key "Horizontal", actual registered key is "j0_Horizontal"</span>
-joysticks[<span class="pl-c1">1</span>].GetButtonDown(<span class="pl-s"><span class="pl-pds">"</span>Fire1<span class="pl-pds">"</span></span>); <span class="pl-c">// use short key "Fire1", actual registered key is "j1_Fire1"</span></pre></div>
-
-<h3>
-<a id="43-extensions" class="anchor" href="#43-extensions" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="extension"></a>4.3 Extensions</h3>
-
-<p>As mentioned above, different input solutions are abstracted as <code>IInputSource</code> interfaces in SDK. Thus, developers can customize multiple input solutions of their own.</p>
-
-<p>The interface function of <code>IInputSource</code> is as follows:</p>
-
-<div class="highlight highlight-source-c++"><pre>public interface IInputSource
+// access input through HandJoystick
+joysticks[0].GetAxis(&quot;Horizontal&quot;); // use short key &quot;Horizontal&quot;, actual registered key is &quot;j0_Horizontal&quot;
+joysticks[1].GetButtonDown(&quot;Fire1&quot;); // use short key &quot;Fire1&quot;, actual registered key is &quot;j1_Fire1&quot;
+</code></pre>
+<h3 id="4.3-extensions"><a name="4.3-extensions" href="#4.3-extensions"></a><a name="extension"></a> 4.3 Extensions</h3>
+<p>As mentioned above, different input solutions are abstracted as <code>IInputSource</code> interfaces in SDK. Thus, developers can customize multiple input solutions of their own.<br>The interface function of <code>IInputSource</code> is as follows:</p>
+<pre><code class="cpp">public interface IInputSource
 {
-    <span class="pl-c">// Methods</span>
-    <span class="pl-k">int</span> <span class="pl-smi">EnterInputFrame</span>();
-    <span class="pl-k">int</span> <span class="pl-smi">ExitInput</span>();
-    <span class="pl-k">int</span> <span class="pl-smi">ExitInputFrame</span>();
-    <span class="pl-k">int</span> <span class="pl-smi">InitInput</span>();
+    // Methods
+    int EnterInputFrame();
+    int ExitInput();
+    int ExitInputFrame();
+    int InitInput();
 
-    <span class="pl-c">// Properties</span>
-    <span class="pl-k">bool</span> enabled {get; set;}
-}</pre></div>
-
+    // Properties
+    bool enabled {get; set;}
+}
+</code></pre>
 <table>
 <thead>
 <tr>
@@ -747,7 +465,7 @@ joysticks[<span class="pl-c1">1</span>].GetButtonDown(<span class="pl-s"><span c
 </tr>
 <tr>
 <td><code>EnterInputFrame()</code></td>
-<td>enter input frame, write corresponding input information to CrossInputManager's input cache, return 0 if successful</td>
+<td>enter input frame, write corresponding input information to CrossInputManager’s input cache, return 0 if successful</td>
 </tr>
 <tr>
 <td><code>ExitInputFrame()</code></td>
@@ -755,225 +473,106 @@ joysticks[<span class="pl-c1">1</span>].GetButtonDown(<span class="pl-s"><span c
 </tr>
 </tbody>
 </table>
-
 <p>Remarks:</p>
-
 <ol>
-<li><p>Input cache refers to the list of <code>VirtualAxis</code>, <code>VirtualButton</code> and <code>VirtualPose</code> of <code>CrossInputManager</code>.</p></li>
-<li><p>Input frame refers to the time stamp when the program reads the input (<code>MonoBehaviour.Update()</code>).</p></li>
-</ol>
+<li>Input cache refers to the list of <code>VirtualAxis</code>, <code>VirtualButton</code> and <code>VirtualPose</code> of <code>CrossInputManager</code>.</li><li>Input frame refers to the time stamp when the program reads the input (<code>MonoBehaviour.Update()</code>).</li></ol>
+<p>In order to run in <code>Ximmerse.CrossInput</code>, it only needs to implement the <code>MonoBehaviour</code> of <code>IInputSource</code>‘s interface and add it to the property source list of <code>CrossInputManager</code>.</p>
+<p>Similarly, Razer’s Hydra can also be used due to its compatibility with <code>Ximmerse.CrossInput</code> by adding its SDK <code>SixenseUnityPlugin</code> to the project and compatible scipt <code>Sixense Input.cs</code> to <code>CrossInputManager</code>.</p>
+<div align = center><img src="imgs/SixenseInput.png" alt=""></div>
 
-<p>In order to run in <code>Ximmerse.CrossInput</code>, it only needs to implement the <code>MonoBehaviour</code> of <code>IInputSource</code>'s interface and add it to the property source list of <code>CrossInputManager</code>.</p>
-
-<p>Similarly, Razer's Hydra can also be used due to its compatibility with <code>Ximmerse.CrossInput</code> by adding its SDK <code>SixenseUnityPlugin</code> to the project and compatible scipt <code>Sixense Input.cs</code> to <code>CrossInputManager</code>.</p>
-
-<div><img src="imgs/SixenseInput.png"></div>
-
-<hr>
-
-<h2>
-<a id="5-other-namespaces" class="anchor" href="#5-other-namespaces" aria-hidden="true"><span class="octicon octicon-link"></span></a>5 Other Namespaces</h2>
-
-<p>Some scripts belong to the Utility class. Demos are available for them where you can edit to fit your needs. Some namespaces belong to low level encapsulation of the SDK which in general cases, will not be used in project development.
-There are some other namespaces in this SDK, including:</p>
-
+<hr class="page">
+<h2 id="5-other-namespaces"><a name="5-other-namespaces" href="#5-other-namespaces"></a>5 Other Namespaces</h2>
+<p>Some scripts belong to the Utility class. Demos are available for them where you can edit to fit your needs. Some namespaces belong to low level encapsulation of the SDK which in general cases, will not be used in project development.<br>There are some other namespaces in this SDK, including:</p>
 <ul>
-<li>
-<code>Ximmerse.Animation</code>: for easy implementation of animation solutions, like <code>HandAnimator</code>.</li>
-<li>
-<code>Ximmerse.IO</code>: for IO Stream under Windows and Android and encapsulation of IO tools class.</li>
-<li>
-<code>Ximmerse.UI</code>: for extension of UGUI and the compatible solution of traditional UI and VR UI.</li>
-</ul>
-
-<hr>
-
-<h2>
-<a id="6-samples" class="anchor" href="#6-samples" aria-hidden="true"><span class="octicon octicon-link"></span></a>6 Samples</h2>
-
+<li><code>Ximmerse.Animation</code>: for easy implementation of animation solutions, like <code>HandAnimator</code>.</li><li><code>Ximmerse.IO</code>: for IO Stream under Windows and Android and encapsulation of IO tools class.</li><li><code>Ximmerse.UI</code>: for extension of UGUI and the compatible solution of traditional UI and VR UI.</li></ul>
+<hr class="page">
+<h2 id="6-samples"><a name="6-samples" href="#6-samples"></a>6 Samples</h2>
 <blockquote>
 <p>Note: all samples can be found in folder <code>$(ProjectDir)/Assets/Ximmerse SDK/Scenes/</code>.</p>
 </blockquote>
-
-<h3>
-<a id="61-crossinputmanagergui" class="anchor" href="#61-crossinputmanagergui" aria-hidden="true"><span class="octicon octicon-link"></span></a>6.1 <code>CrossInputManagerGUI</code>
-</h3>
-
+<h3 id="6.1-`crossinputmanagergui`"><a name="6.1-`crossinputmanagergui`" href="#6.1-`crossinputmanagergui`"></a>6.1 <code>CrossInputManagerGUI</code></h3>
 <p><strong>The profiler of <code>Ximmerse.CrossInput.CrossInputManager</code>, from which you can clearly see the input status of <code>CrossInputManager</code>.</strong></p>
+<div align = center><img src="imgs/CrossInputManagerGUI.png" alt=""></div>
 
-<div><img src="imgs/CrossInputManagerGUI.png"></div>
-
-<h3>
-<a id="62-handcontroller" class="anchor" href="#62-handcontroller" aria-hidden="true"><span class="octicon octicon-link"></span></a>6.2 <code>HandController</code>
-</h3>
-
+<h3 id="6.2-`handcontroller`"><a name="6.2-`handcontroller`" href="#6.2-`handcontroller`"></a>6.2 <code>HandController</code></h3>
 <p>This sample demonstrates how to obtain the <code>VirtualPose</code> and how to control hand stretches using the trigger value.</p>
+<div align = center><img src="imgs/hand.png" alt=""></div>
 
-<div><img src="imgs/hand.png"></div>
-
-<h3>
-<a id="63-unitytoximmerse" class="anchor" href="#63-unitytoximmerse" aria-hidden="true"><span class="octicon octicon-link"></span></a>6.3 <code>UnityToXimmerse</code>
-</h3>
-
+<h3 id="6.3-`unitytoximmerse`"><a name="6.3-`unitytoximmerse`" href="#6.3-`unitytoximmerse`"></a>6.3 <code>UnityToXimmerse</code></h3>
 <p>This sample demonstrates how to quickly transfer a Unity project to <code>Ximmerse.CrossInput</code>.</p>
-
 <p>Transfers can be done by setting <code>Input</code> or <code>CrossPlatformInputManager</code> to <code>CrossInputManager</code> through <code>using</code> keyword.</p>
-
-<div class="highlight highlight-source-c++"><pre><span class="pl-c">// &lt;!-- TODO: only need to modify here</span>
-<span class="pl-c">// using UnityStandardAssets.CrossPlatformInput;</span>
-<span class="pl-k">using</span> CrossPlatformInputManager=Ximmerse.CrossInput.CrossInputManager;
-<span class="pl-c">// TODO --&gt;</span></pre></div>
-
+<pre><code class="cpp">// &lt;!-- TODO: only need to modify here
+// using UnityStandardAssets.CrossPlatformInput;
+using CrossPlatformInputManager=Ximmerse.CrossInput.CrossInputManager;
+// TODO --&gt;
+</code></pre>
 <p>If the Unity interface is used in this sample, the hierarchy will be</p>
-
-<div><img src="imgs/UnityInterfaceView.png"></div>
+<div align = center><img src="imgs/UnityInterfaceView.png" alt=""></div>
 
 <p>If the <code>Ximmerse.CrossInput</code> interface is used in this sample, the hierarchy will be</p>
+<div align = center><img src="imgs/CrossInputInterfaceView.png" alt=""></div>
 
-<div><img src="imgs/CrossInputInterfaceView.png"></div>
-
-<h3>
-<a id="64-hydratoximmerse" class="anchor" href="#64-hydratoximmerse" aria-hidden="true"><span class="octicon octicon-link"></span></a>6.4 <code>HydraToXimmerse</code>
-</h3>
-
-<p>This sample demonstrates how to quickly transfer a Razer's Hydra project to <code>Ximmerse.CrossInput</code>. Some modifications exist for the interfaces to be accessed.</p>
-
+<h3 id="6.4-`hydratoximmerse`"><a name="6.4-`hydratoximmerse`" href="#6.4-`hydratoximmerse`"></a>6.4 <code>HydraToXimmerse</code></h3>
+<p>This sample demonstrates how to quickly transfer a Razer’s Hydra project to <code>Ximmerse.CrossInput</code>. Some modifications exist for the interfaces to be accessed.</p>
 <p>If <code>SixenseHands</code> of <code>SixenseInput SDK</code> is used in this sample, the hierarchy will be</p>
-
-<div><img src="imgs/DirectionalLight.png"></div>
+<div align = center><img src="imgs/DirectionalLight.png" alt=""></div>
 
 <p>If <code>HydraToXimmerse</code> of this SDK is used in this sample, the hierarchy will be</p>
-
-<div><img src="imgs/DirectionalLight2.png"></div>
-
-<ol>
-<li>First remove the original <code>SixenseInput</code> and add the preset object of <code>CrossInputManager</code> then, check the <code>As Hand Joystick</code> checkbox of the compatible <code>CrossInput</code>'s <code>SixenseInput</code>, <code>HandJoystick</code> thus will create two joystick accessors automatically.
-<div><img src="imgs/SixenseInput2.png"></div>
-</li>
-<li>Remove <code>SixenseHandsController</code> script and add the parent transform with <code>PoseMover</code> for <code>Hand-Right</code> and <code>Hand-Left</code> to achieve no rotation shift of the <code>Transform</code> controlled by <code>PoseMover</code>, i.e. no rotation for the <code>Transform</code> controlled by <code>PoseMover</code> when the corresponding <code>VirtualPose</code> has no rotation. Meanwhile, set <code>localPosition</code> of <code>Hand-Right</code> and <code>Hand-Left</code> to <code>Vector3.zero</code>.
-<div>
-<img src="imgs/HandsController.png"> <br>
-<img src="imgs/PoseMover.png"> <img src="imgs/PoseMover2.png">
-</div>
-</li>
-<li>
-<p>Move the left and right pivots of <code>SixenseInput</code> that is compatible to <code>CrossInput</code> to where <code>PoseMover</code> is.</p>
-
-<div><img src="imgs/CrossInput2.png"></div>
-</li>
-<li>
-<p>Modify <code>SixenseHand.cs</code> to import <code>Ximmerse.CrossInput</code> namespace.</p>
-
-<div class="highlight highlight-source-c++"><pre><span class="pl-c">// &lt;!-- TODO</span>
-<span class="pl-k">using</span> Ximmerse.CrossInput;
-<span class="pl-c">// TODO --&gt;</span></pre></div>
-</li>
-<li>
-<p>Replace <code>SixenseInput.Controller</code> in the script by <code>HandJoystick</code>.</p>
-
-<div class="highlight highlight-source-c++"><pre><span class="pl-c">// &lt;!-- TODO</span>
-        <span class="pl-c">//public SixenseInput.Controller m_controller = null;</span>
-        public HandJoystick m_controller;
-<span class="pl-c">// TODO --&gt;</span></pre></div>
-</li>
-<li>
-<p>Obtain <code>m_controller</code> from <code>HandJoystick.joysticks</code>, reference 0 for left hand and 1 for right hand.</p>
-
-<div class="highlight highlight-source-c++"><pre><span class="pl-c">// &lt;!-- TODO</span>
-                <span class="pl-c">//m_controller = SixenseInput.GetController( m_hand );</span>
-                m_controller = HandJoystick.joysticks( (<span class="pl-k">int</span>)m_hand-<span class="pl-c1">1</span> );
-<span class="pl-c">// TODO --&gt;</span></pre></div>
-</li>
-<li>
-<p>When accessing input interface, replace the original <code>SixenseInput</code> function with the <code>HandJoystick</code> function of Unity style.</p>
-
-<div class="highlight highlight-source-c++"><pre><span class="pl-c">// &lt;!-- TODO</span>
-            <span class="pl-c">//if ( m_controller.GetButton(SixenseButtons.ONE) ) {</span>
-            <span class="pl-k">if</span> ( m_controller.GetButton(<span class="pl-s"><span class="pl-pds">"</span>ONE<span class="pl-pds">"</span></span>) ) {
-                <span class="pl-c">// do something</span>
-            }
-<span class="pl-c">// TODO --&gt;</span></pre></div>
-</li>
-<li>
-<p>Map trigger value to axes and buttons, i.e. <code>HandJoystick.GetAxis(triggerName)</code> and <code>HandJoystick.GetButton(triggerName)</code>.</p>
-
-<div class="highlight highlight-source-c++"><pre><span class="pl-c">// &lt;!-- TODO</span>
-            <span class="pl-c">//float fTriggerVal = m_controller.Trigger;</span>
-            <span class="pl-k">float</span> <span class="pl-smi">fTriggerVal</span> = m_controller.GetAxis(<span class="pl-s"><span class="pl-pds">"</span>TRIGGER<span class="pl-pds">"</span></span>);
-<span class="pl-c">// TODO --&gt;</span></pre></div>
-</li>
-<li><p>Ensure that <code>triggerName</code> is not a constant. It should be consistent with the crossponding value of <code>Ximmerse.CrossInput.CrossInputManager</code>. It's more convenient to obtain the information of given joystick from multiple ones by replacing the full key of <code>CrossInputManager</code> with short keys.</p></li>
-</ol>
-
-<hr>
-
-<h2>
-<a id="7-developing-with-gear-vr" class="anchor" href="#7-developing-with-gear-vr" aria-hidden="true"><span class="octicon octicon-link"></span></a>7 Developing with Gear VR</h2>
-
-<h3>
-<a id="71-hardware-requirement" class="anchor" href="#71-hardware-requirement" aria-hidden="true"><span class="octicon octicon-link"></span></a>7.1 Hardware Requirement</h3>
+<div align = center><img src="imgs/DirectionalLight2.png" alt=""></div>
 
 <ol>
-<li>Ximmerse X-Hawk</li>
-<li>Ximmerse X-Hawk USB Connector</li>
-<li>Gear VR2</li>
-<li>Samsung mobile phone: Galaxy S6
-<div>
-<img src="imgs/GEAR_VR_connect.png" width="500">
-</div>
-</li>
-</ol>
-
-<h3>
-<a id="72-steps" class="anchor" href="#72-steps" aria-hidden="true"><span class="octicon octicon-link"></span></a>7.2 Steps</h3>
-
+<li>First remove the original <code>SixenseInput</code> and add the preset object of <code>CrossInputManager</code> then, check the <code>As Hand Joystick</code> checkbox of the compatible <code>CrossInput</code>‘s <code>SixenseInput</code>, <code>HandJoystick</code> thus will create two joystick accessors automatically.<div align = center><img src="imgs/SixenseInput2.png" alt=""></div></li><li>Remove <code>SixenseHandsController</code> script and add the parent transform with <code>PoseMover</code> for <code>Hand-Right</code> and <code>Hand-Left</code> to achieve no rotation shift of the <code>Transform</code> controlled by <code>PoseMover</code>, i.e. no rotation for the <code>Transform</code> controlled by <code>PoseMover</code> when the corresponding <code>VirtualPose</code> has no rotation. Meanwhile, set <code>localPosition</code> of <code>Hand-Right</code> and <code>Hand-Left</code> to <code>Vector3.zero</code>.<div align = center><br><img src="imgs/HandsController.png" alt=""><br><img src="imgs/PoseMover.png" alt=""> <img src="imgs/PoseMover2.png" alt=""><br></div></li><li>Move the left and right pivots of <code>SixenseInput</code> that is compatible to <code>CrossInput</code> to where <code>PoseMover</code> is.<div align = center><img src="imgs/CrossInput2.png" alt=""></div></li><li>Modify <code>SixenseHand.cs</code> to import <code>Ximmerse.CrossInput</code> namespace.<pre><code class="cpp">// &lt;!-- TODO
+using Ximmerse.CrossInput;
+// TODO --&gt;
+</code></pre>
+</li><li>Replace <code>SixenseInput.Controller</code> in the script by <code>HandJoystick</code>.<pre><code class="cpp">// &lt;!-- TODO
+     //public SixenseInput.Controller m_controller = null;
+     public HandJoystick m_controller;
+// TODO --&gt;
+</code></pre>
+</li><li>Obtain <code>m_controller</code> from <code>HandJoystick.joysticks</code>, reference 0 for left hand and 1 for right hand.<pre><code class="cpp">// &lt;!-- TODO
+             //m_controller = SixenseInput.GetController( m_hand );
+             m_controller = HandJoystick.joysticks( (int)m_hand-1 );
+// TODO --&gt;
+</code></pre>
+</li><li>When accessing input interface, replace the original <code>SixenseInput</code> function with the <code>HandJoystick</code> function of Unity style.<pre><code class="cpp">// &lt;!-- TODO
+         //if ( m_controller.GetButton(SixenseButtons.ONE) ) {
+         if ( m_controller.GetButton(&quot;ONE&quot;) ) {
+             // do something
+         }
+// TODO --&gt;
+</code></pre>
+</li><li>Map trigger value to axes and buttons, i.e. <code>HandJoystick.GetAxis(triggerName)</code> and <code>HandJoystick.GetButton(triggerName)</code>.<pre><code class="cpp">// &lt;!-- TODO
+         //float fTriggerVal = m_controller.Trigger;
+         float fTriggerVal = m_controller.GetAxis(&quot;TRIGGER&quot;);
+// TODO --&gt;
+</code></pre>
+</li><li>Ensure that <code>triggerName</code> is not a constant. It should be consistent with the crossponding value of <code>Ximmerse.CrossInput.CrossInputManager</code>. It’s more convenient to obtain the information of given joystick from multiple ones by replacing the full key of <code>CrossInputManager</code> with short keys.</li></ol>
+<hr class="page">
+<h2 id="7-developing-with-gear-vr"><a name="7-developing-with-gear-vr" href="#7-developing-with-gear-vr"></a>7 Developing with Gear VR</h2>
+<h3 id="7.1-hardware-requirement"><a name="7.1-hardware-requirement" href="#7.1-hardware-requirement"></a>7.1 Hardware Requirement</h3>
 <ol>
-<li>
-<p>Enable developer mode in Galaxy S6. This can be done in <code>Settings</code> <code>--&gt;</code> <code>Device</code> <code>--&gt;</code> <code>Applications</code> <code>--&gt;</code> <code>Application manager</code> <code>--&gt;</code> <code>Gear AR Service</code> <code>--&gt;</code> <code>Storage</code> <code>--&gt;</code> <code>MANAGE STORAGE</code> <code>--&gt;</code> <code>Developer</code> <code>--&gt;</code> <code>Developer mode</code>.</p>
+<li>Ximmerse X-Hawk</li><li>Ximmerse X-Hawk USB Connector</li><li>Gear VR2</li><li>Samsung mobile phone: Galaxy S6<div align = center><br><img src="imgs/GEAR_VR_connect.png" width="640" ><br></div>
 
+</li></ol>
+<h3 id="7.2-steps"><a name="7.2-steps" href="#7.2-steps"></a>7.2 Steps</h3>
+<ol>
+<li><p>Enable developer mode in Galaxy S6. This can be done in <code>Settings</code><span class="mathjax">$\rightarrow$</span> <code>Device</code><span class="mathjax">$\rightarrow$</span> <code>Applications</code><span class="mathjax">$\rightarrow$</span> <code>Application manager</code><span class="mathjax">$\rightarrow$</span> <code>Gear AR Service</code><span class="mathjax">$\rightarrow$</span> <code>Storage</code><span class="mathjax">$\rightarrow$</span> <code>MANAGE STORAGE</code><span class="mathjax">$\rightarrow$</span> <code>Developer</code><span class="mathjax">$\rightarrow$</span> <code>Developer mode</code>.</p>
 <blockquote>
 <p>Tip: If you do not see the <code>Developer mode</code> option in <code>Gear AR Service</code>, tap <code>VR Server Version</code> at least 6 times. By re-entering the dialog, you will be able to see it.</p>
 </blockquote>
-
-<div><img src="imgs/DeveloperMode.png"></div>
-</li>
-<li>Connect the X-Hawk's USB port C to a power bank.</li>
-<li>Connect the X-Hawk's USB port A to the X-Hawk.</li>
-<li>
-<p>Connect the X-Hawk's USB port B to the Galaxy S6. Wait until <code>Choose an app for the USB device</code> dialog pops up. Note that all the available apps that use Ximmerse's SDK will be displayed here.</p>
-
-<div><img src="imgs/App.png"></div>
+ <div align = center><img src="imgs/DeveloperMode.png" alt=""></div></li><li>Connect the X-Hawk’s USB port C to a power bank.</li><li>Connect the X-Hawk’s USB port A to the X-Hawk.</li><li><p>Connect the X-Hawk’s USB port B to the Galaxy S6. Wait until <code>Choose an app for the USB device</code> dialog pops up. Note that all the available apps that use Ximmerse’s SDK will be displayed here.</p>
+<div align = center><img src="imgs/App.png" alt=""></div>
 
 <blockquote>
-<p>Tip: If the <code>Choose an app for the USB device</code> dialog does not pop up after a while,  you will need to clear the cache of the previous apps that use Ximmerse's SDK. This can be done in <code>Settings</code> <code>--&gt;</code> <code>Device</code> <code>--&gt;</code> <code>Applications</code> <code>--&gt;</code> <code>Default applications</code> <code>--&gt;</code> <code>Clear defaults</code> <code>--&gt;</code> <code>CLEAR</code>.</p>
-
-<div><img src="imgs/Clear.png"></div>
+<p>Tip: If the <code>Choose an app for the USB device</code> dialog does not pop up after a while,  you will need to clear the cache of the previous apps that use Ximmerse’s SDK. This can be done in <code>Settings</code><span class="mathjax">$\rightarrow$</span> <code>Device</code><span class="mathjax">$\rightarrow$</span> <code>Applications</code><span class="mathjax">$\rightarrow$</span> <code>Default applications</code><span class="mathjax">$\rightarrow$</span> <code>Clear defaults</code><span class="mathjax">$\rightarrow$</span> <code>CLEAR</code>.</p>
+<div align = center><img src="imgs/Clear.png" alt=""></div>
 </blockquote>
-</li>
-<li>
-<p>Choose any of the available apps to continue. Take <code>Ximmerse SDK 1.00</code> for example, select it and click the <code>ALWAYS</code> option to continue. You will be able to see the stereo camera demo running on the Galaxy S6.</p>
-
-<div><img src="imgs/App2.png"></div>
-
-<div><img src="imgs/DualCamera.png"></div>
-</li>
-<li>Remove port B from the Galaxy S6 and connect it to the Gear VR.</li>
-<li>Insert Galaxy S6 into Gear VR. You will be able to see the stereo camera demo running on the Galaxy S6.</li>
-<li>You are now ready to enjoy VR on the Gear VR.</li>
-</ol>
-
+</li><li><p>Choose any of the available apps to continue. Take <code>Ximmerse SDK 1.00</code> for example, select it and click the <code>ALWAYS</code> option to continue. You will be able to see the stereo camera demo running on the Galaxy S6.</p>
+<div align = center><img src="imgs/App2.png" alt=""></div><br><div align = center><img src="imgs/DualCamera.png" alt=""></div></li><li>Remove port B from the Galaxy S6 and connect it to the Gear VR.</li><li>Insert Galaxy S6 into Gear VR. You will be able to see the stereo camera demo running on the Galaxy S6.</li><li>You are now ready to enjoy VR on the Gear VR.</li></ol>
 <blockquote>
-<p>Tip: If you want to switch to other apps, for example from <code>Ximmerse SDK 1.00</code> to <code>UsbListener</code>, you will also need to clear the cache of previous apps that used Ximmerse's SDK as mentioned previously.</p>
+<p>Tip: If you want to switch to other apps, for example from <code>Ximmerse SDK 1.00</code> to <code>UsbListener</code>, you will also need to clear the cache of previous apps that used Ximmerse’s SDK as mentioned previously.</p>
 </blockquote>
 
-      <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/herohuyongtao/testdoc">Ximmerse SDK for Unity3D (v1.0)</a> is maintained by <a href="https://github.com/herohuyongtao">herohuyongtao</a>.</span>
-
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
-      </footer>
-
-    </section>
-
-  
   </body>
 </html>
